@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Dary的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="xpath和xml数据格式1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dary的博客">
+<meta property="og:url" content="http://dary.work/2021/09/11/xpath/index.html">
+<meta property="og:site_name" content="Dary的博客">
+<meta property="og:description" content="xpath和xml数据格式1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-09-11T06:29:14.599Z">
+<meta property="article:modified_time" content="2021-08-16T11:28:16.147Z">
+<meta property="article:author" content="Dary">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Dary的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Dary的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://dary.work"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-xpath" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/09/11/xpath/" class="article-date">
+  <time datetime="2021-09-11T06:29:14.599Z" itemprop="datePublished">2021-09-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="xpath和xml数据格式"><a href="#xpath和xml数据格式" class="headerlink" title="xpath和xml数据格式"></a>xpath和xml数据格式</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 专业术语</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">树：整个html或xml结构</span></span><br><span class="line"><span class="string">节点：html中的每个标签，xml中标签就是节点</span></span><br><span class="line"><span class="string">根节点：树的第一个节点，html的根节点就是html标签</span></span><br><span class="line"><span class="string">属性：节点属性（html中就是标签属性）</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 2.xml数据格式</span></span><br><span class="line"><span class="comment"># json数据和xml数据是两种通用的数据格式，用于不同语言之间进行数据交流</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">将一个超市的商品数据进行传输：</span></span><br><span class="line"><span class="string">json:</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    &quot;name&quot;: &quot;永辉超市&quot;,</span></span><br><span class="line"><span class="string">    &quot;address&quot;: &quot;肖家河大厦&quot;,</span></span><br><span class="line"><span class="string">    &quot;goods&quot;: [</span></span><br><span class="line"><span class="string">        &#123;&quot;name&quot;: &quot;泡面&quot;, &quot;price&quot;: 3.5, &quot;count&quot;: 20&#125;,</span></span><br><span class="line"><span class="string">        &#123;&quot;name&quot;: &quot;矿泉水&quot;, &quot;prcie&quot;: 2, &quot;count&quot;: 50&#125;,</span></span><br><span class="line"><span class="string">        &#123;&quot;name&quot;: &quot;面包&quot;, &quot;price&quot;: 5, &quot;count&quot;: 15&#125;</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">xml:</span></span><br><span class="line"><span class="string">&lt;supermarket&gt;</span></span><br><span class="line"><span class="string">    &lt;name&gt;永辉超市&lt;/name&gt;</span></span><br><span class="line"><span class="string">    &lt;address&gt;肖家河大厦&lt;/address&gt;</span></span><br><span class="line"><span class="string">    &lt;goodsList&gt;</span></span><br><span class="line"><span class="string">        &lt;goods name=&quot;泡面&quot; price=&quot;3.5&quot; count=&quot;20&quot;&gt;&lt;/goods&gt;</span></span><br><span class="line"><span class="string">        &lt;goods name=&quot;矿泉水&quot; price=&quot;2&quot; count=&quot;50&quot;&gt;&lt;/goods&gt;</span></span><br><span class="line"><span class="string">        &lt;goods name=&quot;面包&quot; price=&quot;5&quot; count=&quot;15&quot;&gt;&lt;/goods&gt;</span></span><br><span class="line"><span class="string">    &lt;/goods&gt;</span></span><br><span class="line"><span class="string">&lt;/supermarket&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1） 准备数据</span></span><br><span class="line">xml_str = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&lt;supermarket&gt;</span></span><br><span class="line"><span class="string">    &lt;name&gt;永辉超市&lt;/name&gt;</span></span><br><span class="line"><span class="string">    &lt;address&gt;肖家河大厦&lt;/address&gt;</span></span><br><span class="line"><span class="string">    &lt;goodsList&gt;</span></span><br><span class="line"><span class="string">        &lt;goods name=&quot;泡面&quot; price=&quot;3.5&quot; count=&quot;20&quot;&gt;&lt;/goods&gt;</span></span><br><span class="line"><span class="string">        &lt;goods name=&quot;矿泉水&quot; price=&quot;2&quot; count=&quot;50&quot;&gt;&lt;/goods&gt;</span></span><br><span class="line"><span class="string">        &lt;goods name=&quot;面包&quot; price=&quot;5&quot; count=&quot;15&quot;&gt;&lt;/goods&gt;</span></span><br><span class="line"><span class="string">    &lt;/goodsList&gt;</span></span><br><span class="line"><span class="string">    &lt;worker_list&gt;</span></span><br><span class="line"><span class="string">        &lt;cashier name=&quot;张三&quot; pay=&quot;4000&quot;&gt;&lt;/cashier&gt;</span></span><br><span class="line"><span class="string">        &lt;shoppingGuide name=&quot;李四&quot; pay=&quot;3500&quot;&gt;&lt;/shoppingGuide&gt;</span></span><br><span class="line"><span class="string">    &lt;/worker_list&gt;</span></span><br><span class="line"><span class="string">    &lt;goods price=&quot;50&quot; count=&quot;15&quot;&gt;</span></span><br><span class="line"><span class="string">         &lt;name&gt;烟&lt;/name&gt;</span></span><br><span class="line"><span class="string">    &lt;/goods&gt;</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">&lt;/supermarket&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2）创建树对象，并且获取数据的根节点</span></span><br><span class="line">supermarket = etree.XML(xml_str)</span><br><span class="line"><span class="built_in">print</span>(supermarket)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3) 获取标签(获取节点)</span></span><br><span class="line"><span class="comment"># 节点对象.xpath(路径)    -     根据路径找到对应的节点，返回保存节点对象的列表</span></span><br><span class="line"><span class="comment"># a. 写绝对路径：不管xpath前面的节点对象是什么，路径从根节点开始写</span></span><br><span class="line"><span class="comment"># 写法：/绝对路径</span></span><br><span class="line">cashier = supermarket.xpath(<span class="string">&#x27;/supermarket/worker_list/cashier&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(cashier)</span><br><span class="line"></span><br><span class="line">worker_list = supermarket.xpath(<span class="string">&#x27;/supermarket/worker_list&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>(worker_list)      <span class="comment"># &lt;Element worker_list at 0x105da5b40&gt;</span></span><br><span class="line"></span><br><span class="line">result = worker_list.xpath(<span class="string">&#x27;/worker_list/cashier&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)       <span class="comment"># []</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># b. 相对路径：</span></span><br><span class="line"><span class="comment"># 用.来表示当前节点，xpath前面是谁，当前节点就是谁</span></span><br><span class="line"><span class="comment"># 用..来表示当前节点的上层节点</span></span><br><span class="line"><span class="comment"># 注意：./可以省略</span></span><br><span class="line">cashier = supermarket.xpath(<span class="string">&#x27;./worker_list/cashier&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(cashier)      <span class="comment"># [&lt;Element cashier at 0x106769c00&gt;]</span></span><br><span class="line"></span><br><span class="line">cashier = worker_list.xpath(<span class="string">&#x27;./cashier&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(cashier)      <span class="comment"># [&lt;Element cashier at 0x106769c00&gt;]</span></span><br><span class="line"></span><br><span class="line">cashier = supermarket.xpath(<span class="string">&#x27;worker_list/cashier&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(cashier)      <span class="comment"># [&lt;Element cashier at 0x1047e5c80&gt;]</span></span><br><span class="line"></span><br><span class="line">cashier = worker_list.xpath(<span class="string">&#x27;cashier&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(cashier)      <span class="comment"># [&lt;Element cashier at 0x1047e5c80&gt;]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># c. //路径   -      从任意位置开始全局搜索</span></span><br><span class="line"><span class="comment"># 查找方式和功能和xpath前的节点无关</span></span><br><span class="line">result = supermarket.xpath(<span class="string">&#x27;//cashier&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)       <span class="comment"># [&lt;Element cashier at 0x10616ecc0&gt;]</span></span><br><span class="line"></span><br><span class="line">result = supermarket.xpath(<span class="string">&#x27;//goods&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)       <span class="comment"># [&lt;Element goods at 0x109011e40&gt;, &lt;Element goods at 0x109011e80&gt;, &lt;Element goods at 0x109011ec0&gt;, &lt;Element goods at 0x109011f00&gt;]</span></span><br><span class="line"></span><br><span class="line">result = supermarket.xpath(<span class="string">&#x27;//goodsList/goods&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4) 获取节点内容</span></span><br><span class="line"><span class="comment"># 语法：获取节点的路径/text()</span></span><br><span class="line">name = supermarket.xpath(<span class="string">&#x27;./name/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(name)</span><br><span class="line"></span><br><span class="line">names = supermarket.xpath(<span class="string">&#x27;//name/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(names)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5) 获取节点属性值</span></span><br><span class="line"><span class="comment"># 语法：获取节点的路径/@属性名</span></span><br><span class="line">result = supermarket.xpath(<span class="string">&#x27;./goods/@price&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line">result = supermarket.xpath(<span class="string">&#x27;//goods/@price&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="解析html"><a href="#解析html" class="headerlink" title="解析html"></a>解析html</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line">html = etree.HTML(<span class="built_in">open</span>(<span class="string">&#x27;test.html&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>).read())</span><br><span class="line"></span><br><span class="line">h1 = html.xpath(<span class="string">&#x27;/html/body/h1&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(h1)</span><br><span class="line"></span><br><span class="line">h1 = html.xpath(<span class="string">&#x27;./body/h1&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(h1)</span><br><span class="line"></span><br><span class="line">h1 = html.xpath(<span class="string">&#x27;//h1&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(h1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 加谓语（加条件）</span></span><br><span class="line"><span class="comment"># 语法：选中标签的路径[谓语]</span></span><br><span class="line"><span class="comment"># 1）[N]  - 获取同层的第N个标签</span></span><br><span class="line">p = html.xpath(<span class="string">&#x27;./body/p[1]/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(p)</span><br><span class="line"></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/ul/li[2]/p/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2)</span></span><br><span class="line"><span class="comment"># [last()]  -  获取同层的最后一个标签</span></span><br><span class="line"><span class="comment"># [last()-N]  - 获取同层的倒数第(N+1)个</span></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/ul/li/p[last()-1]/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/ul/li[last()-1]/p[last()]/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3)</span></span><br><span class="line"><span class="comment"># [position()&gt;N]</span></span><br><span class="line"><span class="comment"># [position()&lt;N]</span></span><br><span class="line"><span class="comment"># [position()&gt;=N]</span></span><br><span class="line"><span class="comment"># [position()&lt;=N]</span></span><br><span class="line"></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/ul/li[position()&lt;=2]/p/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/ul/li[position()&gt;2]/p/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4) [@属性名]     -    获取有指定属性的标签</span></span><br><span class="line"><span class="comment"># p[@class]  - 有class属性的p标签</span></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/div/p[@class]/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># [@属性名=属性值]  -  获取指定属性是指定值的标签</span></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/div/p[@class=&quot;c1&quot;]/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line">result = html.xpath(<span class="string">&#x27;//p[@class=&quot;c1&quot;]/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/div/p[@id=&quot;p1&quot;]/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5）</span></span><br><span class="line"><span class="comment"># [标签 &gt;/&lt;/&gt;=/&lt;=/= 数据]   -   将标签按照指定子标签的内容进行筛选</span></span><br><span class="line"></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/ul/li[p[2]&gt;4]/p/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/ul/li[p[3]&gt;30]/p[1]/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/ul/li[p[1]=&quot;面包&quot;]/p/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 通配符: *</span></span><br><span class="line"><span class="comment"># 1) 表示任意标签</span></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/div[@id=&quot;div1&quot;]/*&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/div[@id=&quot;div1&quot;]/*[@class]&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line">result = html.xpath(<span class="string">&#x27;//*[@class=&quot;c1&quot;]&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2）表示任意属性</span></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/div[last()]/p[@*]/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/div[last()]/p[@*=&quot;p&quot;]/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line">result = html.xpath(<span class="string">&#x27;//img/@*&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 分支（获取若干个路径） - |</span></span><br><span class="line"><span class="comment"># 注意：一个|隔开的必须是两个独立的路径</span></span><br><span class="line">result = html.xpath(<span class="string">&#x27;./body/ul/li/p[1]/text()|./body/ul/li/p[3]/text()&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="selenium和xpath爬豆瓣电影"><a href="#selenium和xpath爬豆瓣电影" class="headerlink" title="selenium和xpath爬豆瓣电影"></a>selenium和xpath爬豆瓣电影</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> Chrome, ChromeOptions</span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_net_data</span>():</span></span><br><span class="line">    b = Chrome()</span><br><span class="line">    b.get(<span class="string">&quot;https://movie.douban.com/explore#!type=movie&amp;tag=%E7%83%AD%E9%97%A8&amp;sort=recommend&amp;page_limit=20&amp;page_start=0&quot;</span>)</span><br><span class="line"></span><br><span class="line">    html = etree.HTML(b.page_source)</span><br><span class="line">    all_movie = html.xpath(<span class="string">&#x27;//div[@class=&quot;list&quot;]/a&#x27;</span>)</span><br><span class="line">    all_data = []</span><br><span class="line">    <span class="keyword">for</span> movie <span class="keyword">in</span> all_movie:</span><br><span class="line">        img_url = movie.xpath(<span class="string">&#x27;./div/img/@src&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">        name = movie.xpath(<span class="string">&#x27;./div/img/@alt&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">        score = movie.xpath(<span class="string">&#x27;./p/strong/text()&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">        all_data.append([name, score, img_url])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> all_data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_data</span>(<span class="params">data: <span class="built_in">list</span></span>):</span></span><br><span class="line">    writer = csv.writer(<span class="built_in">open</span>(<span class="string">&#x27;files/电影.csv&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">    writer.writerow([<span class="string">&#x27;名称&#x27;</span>, <span class="string">&#x27;分数&#x27;</span>, <span class="string">&#x27;封面&#x27;</span>])</span><br><span class="line">    writer.writerows(data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">save_data(get_net_data())</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://dary.work/2021/09/11/xpath/" data-id="cktferqw20001kwv28hbheugz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/09/11/%E4%BB%A3%E7%90%86%E5%92%8Cselenium/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/11/selenium%E8%BF%9B%E9%98%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/09/11/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%92%8C%E8%BF%9B%E7%A8%8B%E6%B1%A0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/11/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/11/%E7%88%AC%E7%93%9C%E5%AD%90%E4%BA%8C%E6%89%8B%E8%BD%A6(json%E6%8E%A5%E5%8F%A3)/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/11/%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/11/%E7%88%AC%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Dary<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
