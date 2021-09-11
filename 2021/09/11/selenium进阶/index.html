@@ -5,17 +5,17 @@
   
 
   
-  <title>Dary的博客</title>
+  <title>selenium进阶 | Dary的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前进后退和切换选项卡1234567891011121314151617181920212223242526272829# &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;1.前进和后退 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;# b &#x3D; Chrome()# b.get(&amp;#x27;https:&#x2F;&#x2F;www.baidu.com&amp;#x27;)# time.sleep(1)# b.get(&amp;#x27;https:&#x2F;&#x2F;www.runo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dary的博客">
+<meta property="og:title" content="selenium进阶">
 <meta property="og:url" content="http://dary.work/2021/09/11/selenium%E8%BF%9B%E9%98%B6/index.html">
 <meta property="og:site_name" content="Dary的博客">
 <meta property="og:description" content="前进后退和切换选项卡1234567891011121314151617181920212223242526272829# &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;1.前进和后退 &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;# b &#x3D; Chrome()# b.get(&amp;#x27;https:&#x2F;&#x2F;www.baidu.com&amp;#x27;)# time.sleep(1)# b.get(&amp;#x27;https:&#x2F;&#x2F;www.runo">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-09-11T06:29:14.577Z">
-<meta property="article:modified_time" content="2021-08-15T09:27:04.984Z">
+<meta property="article:modified_time" content="2021-09-11T06:37:56.264Z">
 <meta property="article:author" content="Dary">
 <meta name="twitter:card" content="summary">
   
@@ -76,6 +76,16 @@
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      selenium进阶
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前进后退和切换选项卡"><a href="#前进后退和切换选项卡" class="headerlink" title="前进后退和切换选项卡"></a>前进后退和切换选项卡</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ==============1.前进和后退 ================</span></span><br><span class="line"><span class="comment"># b = Chrome()</span></span><br><span class="line"><span class="comment"># b.get(&#x27;https://www.baidu.com&#x27;)</span></span><br><span class="line"><span class="comment"># time.sleep(1)</span></span><br><span class="line"><span class="comment"># b.get(&#x27;https://www.runoob.com&#x27;)</span></span><br><span class="line"><span class="comment"># time.sleep(1)</span></span><br><span class="line"><span class="comment"># b.get(&#x27;https://movie.douban.com/top250&#x27;)</span></span><br><span class="line"><span class="comment"># time.sleep(1)</span></span><br><span class="line"><span class="comment"># b.back()</span></span><br><span class="line"><span class="comment"># time.sleep(1)</span></span><br><span class="line"><span class="comment"># b.forward()</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">b = Chrome()</span><br><span class="line">b.get(<span class="string">&#x27;https://movie.douban.com/&#x27;</span>)</span><br><span class="line">music = b.find_element_by_css_selector(<span class="string">&#x27;.global-nav-items&gt;ul&gt;li:nth-child(4)&gt;a&#x27;</span>)</span><br><span class="line">url = music.get_attribute(<span class="string">&#x27;href&#x27;</span>)</span><br><span class="line">music.click()</span><br><span class="line"></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 切换选项卡</span></span><br><span class="line">b.switch_to.window(b.window_handles[<span class="number">0</span>])</span><br><span class="line"><span class="comment"># b.get(&#x27;https://movie.douban.com/&#x27;)</span></span><br><span class="line"></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line">b.switch_to.window(b.window_handles[<span class="number">1</span>])</span><br><span class="line"><span class="comment"># b.get(url)</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;----------------------&#x27;</span>)</span><br></pre></td></tr></table></figure>
@@ -98,7 +108,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://dary.work/2021/09/11/selenium%E8%BF%9B%E9%98%B6/" data-id="cktferqvy0000kwv262ge6mc6" class="article-share-link">Share</a>
+      <a data-url="http://dary.work/2021/09/11/selenium%E8%BF%9B%E9%98%B6/" data-id="cktff3pn50001gsv248mqctvj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -119,7 +129,7 @@
   
     <a href="/2021/09/11/requests%E5%92%8Cbs4/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">request和bs4</div>
     </a>
   
 </nav>
@@ -156,23 +166,19 @@
       <ul>
         
           <li>
-            <a href="/2021/09/11/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%92%8C%E8%BF%9B%E7%A8%8B%E6%B1%A0/">(no title)</a>
+            <a href="/2021/09/11/xpath/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2021/09/11/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">(no title)</a>
+            <a href="/2021/09/11/selenium%E8%BF%9B%E9%98%B6/">selenium进阶</a>
           </li>
         
           <li>
-            <a href="/2021/09/11/%E7%88%AC%E7%93%9C%E5%AD%90%E4%BA%8C%E6%89%8B%E8%BD%A6(json%E6%8E%A5%E5%8F%A3)/">(no title)</a>
+            <a href="/2021/09/11/requests%E5%92%8Cbs4/">request和bs4</a>
           </li>
         
           <li>
-            <a href="/2021/09/11/%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/09/11/%E7%88%AC%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1/">(no title)</a>
+            <a href="/2021/09/11/hello-world/">Hello World</a>
           </li>
         
       </ul>
